@@ -52,7 +52,20 @@ def main_fourth():
     print(sum([ _ for _  in range(101) if n%2 != 0]) )
 
 def main_fifth():
-    pass
+    data_entrante = input("Insertar una lista de elementos separados por coma\nie: hola, mundo, !\n\t")
+
+    if "," not in data_entrante or "" == data_entrante:
+        raise Exception("Format not valid")
+
+    data_search = input("Ingrese el elemnto a buscar\n")
+
+    if "" == data_entrante:
+        raise Exception("Format not valid")
+
+
+    total_times = [data_clean.strip().lower() for data_clean in data_entrante.split(",")].count(data_search.lower())  
+    
+    print(f">> Total repetitions de '{data_search}': {total_times}")
 
 if __name__ == "__main__" :
-    main_fourth()
+    main_fifth()
