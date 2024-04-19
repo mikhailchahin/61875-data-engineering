@@ -19,6 +19,8 @@
 - Contar cuantas veces aparece un elemento en una lista
 
 ## Ejercicios de nivelacion SQL
+! Para crear la base de datos de prueba hay que ejecutar el comando en el dir _semana1_ y ejecutar **make**
+* Ingresar la contraseña creada en el docker compose
 
 
 @Andru-1987
