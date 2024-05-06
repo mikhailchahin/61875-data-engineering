@@ -1,3 +1,5 @@
+-- <data sql> --
+
 INSERT INTO eventos_apocalipticos (id_evento, nombre_evento ,fecha_evento , descripcion_evento)
 VALUES
     (1, 'Apocalipsis Zombie', '2068-01-01', 'Una locura hecha realidad de Zombies'),
