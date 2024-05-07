@@ -3,10 +3,10 @@ version: '3.9'
 services:
 
   db:
-    build:
-      dockerfile: ./Dockerfile 
+    image: postgres
     container_name: redshift-instance 
     restart: always
+    shm_size: 128mb
     environment:
       POSTGRES_PASSWORD: ander123
     ports:
@@ -16,11 +16,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
     volumes:
-      - ./sql_nivelacion:/sql_nivelacion
-      
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+      - ./data:/data
+      - ./sql-etl-process:/sql-etl-process
