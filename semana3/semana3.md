@@ -9,3 +9,6 @@ Para esto deberás crear un proceso de ETL que reciba la información de artícu
 - Crear la tabla “prediccion_fin_mundo”
 - Generar una query que a partir de la tabla de origen permita rellenar la tabla destino
 - Además deberás responder está pregunta: ¿Cuál es el número promedio de días restantes hasta los eventos apocalípticos en cada década, y cuántos eventos comienzan con la letra 'D' y la letra 'A' en cada década?.
+
+
+-- Update today
