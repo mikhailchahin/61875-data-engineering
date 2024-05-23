@@ -16,13 +16,13 @@ SELECT TOP 25
 	ProductVendor.StandardPrice,
 	ProductReview.ReviewerName,
 	ProductReview.Rating,
-	ProductCatery.Name AS CateryName,
-	ProductSubCatery.Name AS SubCateryName
+	ProductCategory.Name AS CateryName,
+	ProductSubCategory.Name AS SubCateryName
 FROM Production.Product
-INNER JOIN Production.ProductSubCatery
-ON ProductSubCatery.ProductSubcateryID = Product.ProductSubcateryID
-INNER JOIN Production.ProductCatery
-ON ProductCatery.ProductCateryID = ProductSubCatery.ProductCateryID
+INNER JOIN Production.ProductSubCategory
+ON ProductSubCategory.ProductSubcategoryID = Product.ProductSubcategoryID
+INNER JOIN Production.ProductCategory
+ON ProductCategory.ProductCategoryID = ProductSubCategory.ProductCategoryID
 INNER JOIN Production.UnitMeasure SizeUnitMeasureCode
 ON Product.SizeUnitMeasureCode = SizeUnitMeasureCode.UnitMeasureCode
 INNER JOIN Production.UnitMeasure WeightUnitMeasureCode
@@ -57,15 +57,15 @@ SELECT TOP 25
 	Product.ProductID,
 	Product.Name AS ProductName,
 	Product.ProductNumber,
-	ProductCatery.Name AS ProductCatery,
-	ProductSubCatery.Name AS ProductSubCatery,
+	ProductCategory.Name AS ProductCategory,
+	ProductSubCategory.Name AS ProductSubCategory,
 	Product.ProductModelID
 INTO #Product
 FROM Production.Product
-INNER JOIN Production.ProductSubCatery
-ON ProductSubCatery.ProductSubcateryID = Product.ProductSubcateryID
-INNER JOIN Production.ProductCatery
-ON ProductCatery.ProductCateryID = ProductSubCatery.ProductCateryID
+INNER JOIN Production.ProductSubCategory
+ON ProductSubCategory.ProductSubcategoryID = Product.ProductSubcategoryID
+INNER JOIN Production.ProductCategory
+ON ProductCategory.ProductCategoryID = ProductSubCategory.ProductCategoryID
 ORDER BY Product.ModifiedDate DESC;
  
 SELECT
@@ -78,8 +78,8 @@ SELECT
 	ProductVendor.StandardPrice,
 	ProductReview.ReviewerName,
 	ProductReview.Rating,
-	Product.ProductCatery,
-	Product.ProductSubCatery
+	Product.ProductCategory,
+	Product.ProductSubCategory
 FROM #Product Product
 INNER JOIN Production.ProductModel
 ON ProductModel.ProductModelID = Product.ProductModelID
@@ -92,4 +92,3 @@ ON ProductVendor.UnitMeasureCode = CostMeasure.UnitMeasureCode;
  
 DROP TABLE #Product;
 SET STATISTICS TIME OFF;  
-  
