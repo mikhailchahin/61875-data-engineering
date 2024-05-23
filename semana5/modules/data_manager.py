@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 
 logging.basicConfig(
     filename='app.log',
-    filemode='w',
+    filemode='a',
     format='%(name)s - %(levelname)s - %(message)s',
     level=logging.INFO)
     
@@ -85,12 +85,19 @@ class DataManager:
         try:
             data = self.get_data()
             logging.info("rename columns")
+            data = data.iloc[:,:4]
             data.columns =["stock_actions","revenue","value","avg_data"]
             logging.info("change index")
             data = data.rename_axis('specific_area').reset_index()
             logging.info("add date to stage the data")
             data["date_to_stage"] = self.get_data().columns[0].date()
             logging.info("save the data")
+            data = data.fillna(0)
+            buffer = StringIO()
+            data.info(buf=buffer)
+            s = buffer.getvalue()
+            logging.info(s)
+            
             return data
         
         except Exception as e:

@@ -14,11 +14,8 @@ user_credentials = {
 }
 
 schema = "andru_ocatorres_coderhouse"
-
-google = DataManager('goog')
-google_data = google.data_transform()
-
 data_conn = DataConn(user_credentials, schema)
+google = DataManager('goog')
 
 try:
     data_conn.get_conn()
