@@ -1,5 +1,2 @@
-FROM httpd:latest
-
-COPY ./website/ /usr/local/apache2/htdocs/
-
-EXPOSE 8080
+FROM nginx
+COPY ./website /usr/share/nginx/html
