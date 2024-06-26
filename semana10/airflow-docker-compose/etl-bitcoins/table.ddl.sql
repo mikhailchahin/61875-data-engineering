@@ -1,6 +1,6 @@
 CREATE TABLE andru_ocatorres_coderhouse.mining_data (
-    mining_algo TEXT,
-    network_hash_rate FLOAT,
+    mining_algo VARCHAR(200),
+    network_hash_rate VARCHAR(200),
     available_on_nicehash_percent FLOAT,
     one_hour_attack_cost FLOAT,
     twenty_four_hours_attack_cost FLOAT,
