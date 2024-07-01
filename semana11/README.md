@@ -3,5 +3,7 @@ _PRESENTACION_
 
 
 Bibliografia:
+[AirFlow SMTP](https://airflow.apache.org/docs/apache-airflow/stable/howto/email-config.html)
+
 [TASKGROUPS](https://jashbhatt776.medium.com/organize-airflow-dags-with-task-groups-627f5b6f1098) 
 
