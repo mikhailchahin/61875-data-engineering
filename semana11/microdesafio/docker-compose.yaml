@@ -55,8 +55,8 @@ x-airflow-common:
     &airflow-common-env
     # uso de variables
     AIRFLOW_VAR_SUBJECT_MAIL: 'Mensaje del fin del mundo'
-    AIRFLOW_VAR_EMAIL: 'anderson.coder.space@gmail.com'
-    AIRFLOW_VAR_EMAIL_PASSWORD: "${EMAIL_PASSWORD}"
+    # AIRFLOW_VAR_EMAIL: 'anderson.coder.space@gmail.com'
+    # AIRFLOW_VAR_EMAIL_PASSWORD: "${EMAIL_PASSWORD}"
     AIRFLOW_VAR_TO_ADDRESS: 'anderson.coder.space@gmail.com'    
 
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -83,6 +83,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ./config/airflow.cfg:/opt/airflow/airflow.cfg
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
