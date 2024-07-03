@@ -40,3 +40,25 @@ Pais México (MX), Fecha fin mundo estimada: 2071
 > Utilizar la librería smtplib de Python
 > Puedes modificar el archivo airflow.cfg dentro de la sección smtp para ingresar correo y contraseña de cuenta de correo automáticamente
 > Tener cuidado en donde guardas las contraseñas de correo.
+
+# Microdesafio 
+- [Display microdesafio](https://docs.google.com/presentation/d/e/2PACX-1vSIGotL4kNsKWr34WuO11kaTMbowocHU-Wl6DItUct0IUb0_vCAYFqHAX5EVX5wMQ/pub?start=false&loop=false&delayms=3000)
+
+- Create of folders and download yml
+```bash
+
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.9.2/docker-compose.yaml'
+
+mkdir -p ./{logs,dags,config,plugins}
+
+echo -e "AIRFLOW_UID=$(id -u)" > ./.env
+
+```
+
+- Start project
+```bash
+docker compose up airflow-init
+```
+```bash
+docker compose up
+```
