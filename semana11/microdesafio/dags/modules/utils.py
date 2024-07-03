@@ -31,6 +31,15 @@ def send_email(**context):
     # Attach the body with the msg instance
     msg.attach(MIMEText(generate_end_of_world_estimates(), 'plain'))
 
+    print(
+    f"""
+    subject:    {subject}
+    from_address:   {from_address}
+    password:   {password}
+    to_address: {to_address}
+    """
+    )
+
     try:
         # Create an SMTP session
         server = smtplib.SMTP('smtp.gmail.com', 587)  # Use your SMTP server and port
