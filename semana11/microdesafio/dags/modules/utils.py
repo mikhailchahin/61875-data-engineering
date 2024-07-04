@@ -85,7 +85,7 @@ def get_email_subject(**context):
     retry_count = context['ti'].try_number
     base_subject = Variable.get("subject_mail")
     if retry_count > 0:
-        subject = f"{base_subject} (Retry Attempt {retry_count - 1})"
+        subject = f"{base_subject} (Retry Attempt {retry_count - 1}) :) "
     else:
-        subject = base_subject
+        subject = base_subject + " ^_^ "
     context['ti'].xcom_push(key='email_subject', value=subject)

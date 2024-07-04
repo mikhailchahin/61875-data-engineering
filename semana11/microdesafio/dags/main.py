@@ -23,7 +23,7 @@ with DAG(
         task_id="mail_sender",
         python_callable=send_email,
         provide_context=True
-   )
+    )
 
     printer_airflow_variables= BashOperator(
         task_id="printer_variables",
